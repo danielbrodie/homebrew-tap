@@ -6,7 +6,7 @@ class FfmpegDecklink < Formula
 
   on_arm do
     url "https://github.com/danielbrodie/ffmpeg-decklink/releases/download/v1.0.0/ffmpeg-decklink-darwin-arm64.tar.gz"
-    sha256 "0304eeab9281522dd7e34caa11bcb30848730beef2585292b4f87e5bdd817763"
+    sha256 "d3e9e4fa6a7334e6df125a42c72638e1d740b727c7bd56cf8f0b30357cc45bb6"
   end
 
   # Runtime dylib dependencies (linked at build time)
@@ -16,8 +16,6 @@ class FfmpegDecklink < Formula
   depends_on "libx11"
   depends_on "xz"
 
-  conflicts_with "ffmpeg", because: "both supply an ffmpeg binary (install as ffmpeg-decklink)"
-
   def install
     bin.install "bin/ffmpeg-decklink"
     bin.install "bin/ffprobe-decklink" if File.exist?("bin/ffprobe-decklink")
@@ -25,18 +23,14 @@ class FfmpegDecklink < Formula
 
   def caveats
     <<~EOS
-      ffmpeg-decklink is installed as `ffmpeg-decklink` (not `ffmpeg`).
-      It will not conflict with a standard ffmpeg installation.
+      ffmpeg-decklink is installed alongside any existing ffmpeg.
 
-      To use with osc-record, set in your config.toml:
+      osc-record will auto-detect it. To use explicitly, set in config.toml:
         [ffmpeg]
         path = "#{opt_bin}/ffmpeg-decklink"
 
-      Or set FFMPEG_PATH in your environment:
-        export FFMPEG_PATH="#{opt_bin}/ffmpeg-decklink"
-
-      This binary requires Blackmagic Desktop Video drivers to be installed.
-      Download from: https://www.blackmagicdesign.com/support/
+      Requires Blackmagic Desktop Video drivers:
+        https://www.blackmagicdesign.com/support/
     EOS
   end
 
