@@ -13,7 +13,9 @@ class OscRecord < Formula
     end
   end
 
-  depends_on "danielbrodie/tap/ffmpeg-decklink"
+  # ffmpeg-decklink is recommended for Blackmagic hardware but not required.
+  # Users with an existing ffmpeg install can set ffmpeg.path in config instead.
+  depends_on "danielbrodie/tap/ffmpeg-decklink" => :recommended
 
   def install
     bin.install "osc-record"
@@ -26,12 +28,15 @@ class OscRecord < Formula
         Stop:   /stop/record/
         Port:   8000
 
-      For Blackmagic capture devices, DeckLink mode is auto-selected.
-      Requires Blackmagic Desktop Video drivers:
+      For Blackmagic DeckLink capture, Desktop Video drivers are required:
         https://www.blackmagicdesign.com/support
 
-      Run `osc-record setup` to configure interactively,
-      or `osc-record setup --no-tui` for plaintext automation.
+      If you already have ffmpeg installed and want to use it instead of
+      ffmpeg-decklink, set the path in ~/.config/osc-record/config.toml:
+        [ffmpeg]
+        path = "/opt/homebrew/bin/ffmpeg"
+
+      Run `osc-record setup` to configure interactively.
     EOS
   end
 
