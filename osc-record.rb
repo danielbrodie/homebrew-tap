@@ -21,6 +21,8 @@ class OscRecord < Formula
 
   def caveats
     <<~EOS
+      Run `osc-record setup` to configure, then `osc-record run` to start.
+
       Default OSC addresses:
         Record: /start/record/
         Stop:   /stop/record/
@@ -29,12 +31,11 @@ class OscRecord < Formula
       For Blackmagic DeckLink capture, Desktop Video drivers are required:
         https://www.blackmagicdesign.com/support
 
-      If you already have ffmpeg installed and want to use it instead of
-      ffmpeg-decklink, set the path in ~/.config/osc-record/config.toml:
-        [ffmpeg]
-        path = "/opt/homebrew/bin/ffmpeg"
-
-      Run `osc-record setup` to configure interactively.
+      To reinstall or upgrade:
+        brew uninstall osc-record ffmpeg-decklink
+        brew untap danielbrodie/tap
+        brew tap danielbrodie/tap
+        brew install osc-record
     EOS
   end
 
