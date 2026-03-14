@@ -1,19 +1,19 @@
 class OscRecord < Formula
   desc "OSC-triggered video capture for live production"
   homepage "https://github.com/danielbrodie/osc-record"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/danielbrodie/osc-record/releases/download/v0.1.0/osc-record_darwin_arm64.tar.gz"
-      sha256 "02ed9918477a3360c0836b48d45a7c7adf8ccad5df22f3824cc007262ef88dd9"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v0.2.0/osc-record_darwin_arm64.tar.gz"
+      sha256 "PLACEHOLDER_ARM64"
     else
-      url "https://github.com/danielbrodie/osc-record/releases/download/v0.1.0/osc-record_darwin_amd64.tar.gz"
-      sha256 "864915bbf8a3e22a47bc604113bf58cd49515a8d7983978c92c1ac720808e846"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v0.2.0/osc-record_darwin_amd64.tar.gz"
+      sha256 "PLACEHOLDER_AMD64"
     end
   end
 
-  depends_on "ffmpeg"
+  depends_on "danielbrodie/tap/ffmpeg-decklink"
 
   def install
     bin.install "osc-record"
@@ -21,18 +21,18 @@ class OscRecord < Formula
 
   def caveats
     <<~EOS
-      For Blackmagic capture devices, decklink mode is strongly recommended.
-      It auto-detects signal format (resolution, framerate, pixel format).
+      ffmpeg-decklink is installed as a dependency and available at:
+        #{Formula["danielbrodie/tap/ffmpeg-decklink"].opt_bin}/ffmpeg-decklink
 
-      To enable decklink mode, install ffmpeg with decklink support:
-        brew tap homebrew-ffmpeg/ffmpeg
-        brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-decklink
+      osc-record will find it automatically. You can also set:
+        export FFMPEG_PATH="#{Formula["danielbrodie/tap/ffmpeg-decklink"].opt_bin}/ffmpeg-decklink"
 
-      You also need the Blackmagic Desktop Video drivers installed:
+      You need the Blackmagic Desktop Video drivers installed:
         https://www.blackmagicdesign.com/support
 
-      Without decklink support, osc-record falls back to avfoundation,
-      which requires manual framerate and pixel format configuration.
+      Quick start:
+        osc-record setup   # configure device, OSC addresses, output dir
+        osc-record run     # start the TUI daemon
     EOS
   end
 
