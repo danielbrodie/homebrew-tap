@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "description": "Pre-built ffmpeg with Blackmagic DeckLink support, for use with osc-record",
+  "homepage": "https://github.com/danielbrodie/ffmpeg-decklink",
+  "license": "LGPL-2.1-or-later",
+  "url": "https://github.com/danielbrodie/ffmpeg-decklink/releases/download/v1.0.0/ffmpeg-decklink-windows-amd64.zip",
+  "hash": "sha256:7299343424dc7560f7708a36e237e29788133cb013d9e5907e92d765422d4ea6",
+  "bin": "ffmpeg-decklink.exe",
+  "checkver": {
+    "github": "https://github.com/danielbrodie/ffmpeg-decklink"
+  },
+  "autoupdate": {
+    "url": "https://github.com/danielbrodie/ffmpeg-decklink/releases/download/v$version/ffmpeg-decklink-windows-amd64.zip"
+  }
+}
