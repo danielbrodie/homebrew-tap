@@ -5,7 +5,7 @@
   "license": "MIT",
   "depends": "main/ffmpeg",
   "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.3.0/osc-record_windows_amd64.zip",
-  "hash": "sha256:8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+  "hash": "sha256:1cae4cd44f7de82dfd21cc71f5983bbc7782a5b41a92f03c8f747414c23b4c0e",
   "bin": "osc-record.exe",
   "post_install": [
     "Write-Host ''",

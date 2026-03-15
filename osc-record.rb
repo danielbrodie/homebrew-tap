@@ -6,10 +6,10 @@ class OscRecord < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/danielbrodie/osc-record/releases/download/v1.3.0/osc-record_darwin_arm64.tar.gz"
-      sha256 "5879cbe933d7e19d375048f776ea45090b58c68b7c28138ebdb3f0fe7afb6a40"
+      sha256 "e473d5ccb8eb8df5b3c6ab4a3bc38ff61d5c0bcf31454fe87e1ba9ee44c4e9f3"
     else
       url "https://github.com/danielbrodie/osc-record/releases/download/v1.3.0/osc-record_darwin_amd64.tar.gz"
-      sha256 "abb7a81d79e81fe0028cebb46a9586e0f9c46e16311db56a6aae7cd72db1f677"
+      sha256 "8b4ec0706dd20d5090045b770ed1585b72215e74e179301a599c59fd4dd665a4"
     end
   end
 
