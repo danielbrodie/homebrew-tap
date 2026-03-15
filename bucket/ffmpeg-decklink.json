@@ -4,7 +4,7 @@
   "homepage": "https://github.com/danielbrodie/ffmpeg-decklink",
   "license": "LGPL-2.1-or-later",
   "url": "https://github.com/danielbrodie/ffmpeg-decklink/releases/download/v1.0.0/ffmpeg-decklink-windows-amd64.zip",
-  "hash": "sha256:7299343424dc7560f7708a36e237e29788133cb013d9e5907e92d765422d4ea6",
+  "hash": "sha256:6423e2b86e478951ee5c4d5624b24c495b1f32d6c69aa57978570a41d4f00a1b",
   "bin": "ffmpeg-decklink.exe",
   "checkver": {
     "github": "https://github.com/danielbrodie/ffmpeg-decklink"
