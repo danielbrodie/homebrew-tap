@@ -3,7 +3,7 @@
   "description": "OSC-triggered video capture for live production",
   "homepage": "https://github.com/danielbrodie/osc-record",
   "license": "MIT",
-  "depends": "main/ffmpeg",
+  "depends": "ffmpeg-decklink",
   "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.3.0/osc-record_windows_amd64.zip",
   "hash": "sha256:1cae4cd44f7de82dfd21cc71f5983bbc7782a5b41a92f03c8f747414c23b4c0e",
   "bin": "osc-record.exe",
@@ -12,7 +12,7 @@
     "Write-Host '  osc-record installed.' -ForegroundColor Green",
     "Write-Host '  Run: osc-record setup' -ForegroundColor Cyan",
     "Write-Host ''",
-    "Write-Host '  For Blackmagic DeckLink capture, install Desktop Video drivers:' -ForegroundColor Yellow",
+    "Write-Host '  Install Blackmagic Desktop Video drivers for DeckLink capture:' -ForegroundColor Yellow",
     "Write-Host '  https://www.blackmagicdesign.com/support' -ForegroundColor Yellow",
     "Write-Host ''"
   ],
