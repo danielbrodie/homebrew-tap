@@ -1,25 +1,25 @@
 {
-  "version": "1.3.1",
-  "description": "OSC-triggered video capture for live production",
-  "homepage": "https://github.com/danielbrodie/osc-record",
-  "license": "MIT",
-  "depends": "ffmpeg-decklink",
-  "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.3.1/osc-record_windows_amd64.zip",
-  "hash": "sha256:c26783f4e17c3ca5b496226724358b1187ca5a87441d9b5f278ac14752dd2153",
-  "bin": "osc-record.exe",
-  "post_install": [
-    "Write-Host ''",
-    "Write-Host '  osc-record installed.' -ForegroundColor Green",
-    "Write-Host '  Run: osc-record setup' -ForegroundColor Cyan",
-    "Write-Host ''",
-    "Write-Host '  Install Blackmagic Desktop Video drivers for DeckLink capture:' -ForegroundColor Yellow",
-    "Write-Host '  https://www.blackmagicdesign.com/support' -ForegroundColor Yellow",
-    "Write-Host ''"
-  ],
-  "checkver": {
-    "github": "https://github.com/danielbrodie/osc-record"
-  },
-  "autoupdate": {
-    "url": "https://github.com/danielbrodie/osc-record/releases/download/v$version/osc-record_windows_amd64.zip"
-  }
+    "version": "1.3.2",
+    "description": "OSC-triggered video capture for live production",
+    "homepage": "https://github.com/danielbrodie/osc-record",
+    "license": "MIT",
+    "depends": "ffmpeg-decklink",
+    "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.3.2/osc-record_windows_amd64.zip",
+    "hash": "sha256:d55d9a6f1f8979d84399b4e4938413a4f8782073864741c1828e12d2c5ad82ea",
+    "bin": "osc-record.exe",
+    "post_install": [
+        "Write-Host ''",
+        "Write-Host '  osc-record installed.' -ForegroundColor Green",
+        "Write-Host '  Run: osc-record setup' -ForegroundColor Cyan",
+        "Write-Host ''",
+        "Write-Host '  Install Blackmagic Desktop Video drivers for DeckLink capture:' -ForegroundColor Yellow",
+        "Write-Host '  https://www.blackmagicdesign.com/support' -ForegroundColor Yellow",
+        "Write-Host ''"
+    ],
+    "checkver": {
+        "github": "https://github.com/danielbrodie/osc-record"
+    },
+    "autoupdate": {
+        "url": "https://github.com/danielbrodie/osc-record/releases/download/v$version/osc-record_windows_amd64.zip"
+    }
 }
