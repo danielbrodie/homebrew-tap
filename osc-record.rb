@@ -13,7 +13,7 @@ class OscRecord < Formula
     end
   end
 
-  depends_on "danielbrodie/tap/ffmpeg-decklink" => :recommended
+  depends_on "danielbrodie/tap/ffmpeg-decklink"
 
   def install
     bin.install "osc-record"
