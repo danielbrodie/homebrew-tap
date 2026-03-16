@@ -9,7 +9,7 @@ class OscRecord < Formula
       sha256 "04d4f13c5b32531bd977197a037360b8d46e4b4d92221fe72e74cef7d605d770"
     else
       url "https://github.com/danielbrodie/osc-record/releases/download/v1.3.10/osc-record_darwin_amd64.tar.gz"
-      sha256 "8289879127915297d161b82f7019156439621b77ecff8f4d020cddfbc28af222"
+      sha256 "5356127d02b32d02adb4966d7b31c21c4882cad8c93bcb6733929de0210a8509"
     end
   end
 
