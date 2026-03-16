@@ -13,6 +13,7 @@ class OscRecord < Formula
     end
   end
 
+  depends_on "ffmpeg"
   depends_on "danielbrodie/tap/ffmpeg-decklink"
 
   def install
