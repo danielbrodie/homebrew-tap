@@ -1,11 +1,11 @@
 {
-    "version": "1.3.21",
+    "version": "1.3.22",
     "description": "OSC-triggered video capture for live production",
     "homepage": "https://github.com/danielbrodie/osc-record",
     "license": "MIT",
     "depends": "ffmpeg-decklink",
-    "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.3.21/osc-record_windows_amd64.zip",
-    "hash": "sha256:e712a2b91548177e7bfd1368eaf371c4ccbac3aad7799b34ce258ad2d1b995ca",
+    "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.3.22/osc-record_windows_amd64.zip",
+    "hash": "sha256:286e8dd422762056f13b79cde70ba8eba185c6c80b907cd6fe5bf140f2b8a9f9",
     "bin": "osc-record.exe",
     "post_install": [
         "Write-Host ''",
