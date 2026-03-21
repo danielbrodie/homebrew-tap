@@ -1,15 +1,15 @@
 class OscRecord < Formula
   desc "OSC-triggered video capture for live production"
   homepage "https://github.com/danielbrodie/osc-record"
-  version "1.3.29"
+  version "1.3.30"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/danielbrodie/osc-record/releases/download/v1.3.29/osc-record_darwin_arm64.tar.gz"
-      sha256 "86ab370bdcf5109ff112ba584b07c523b9204f7418628a4e0f69a3adfb63efee"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v1.3.30/osc-record_darwin_arm64.tar.gz"
+      sha256 "87b334334dfc41e82f8dd668868ca56aed409ae31639c10f3b623c1081196e55"
     else
-      url "https://github.com/danielbrodie/osc-record/releases/download/v1.3.29/osc-record_darwin_amd64.tar.gz"
-      sha256 "841dc6e1daa678c3ddcf9e8e9caf2f7f324836c8878f007d1a2393359f38d085"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v1.3.30/osc-record_darwin_amd64.tar.gz"
+      sha256 "93200972e54c1d1ca2127a220d355b78d0ab3795f2098febc8fd2cbfa4e75d87"
     end
   end
 
