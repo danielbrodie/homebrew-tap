@@ -1,15 +1,16 @@
 class OscRecord < Formula
   desc "OSC-triggered video capture for live production"
   homepage "https://github.com/danielbrodie/osc-record"
-  version "1.4.3"
+  version "1.4.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/danielbrodie/osc-record/releases/download/v1.4.3/osc-record_darwin_arm64.tar.gz"
-      sha256 "e4489dfd7b45b5c1d0d3fc66244d41b64347354cb27cb8c3f889abc8a0abbf97"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v1.4.4/osc-record_darwin_arm64.tar.gz"
+      sha256 "fd036a91dff06b13748a1f69646a9a00a054f12ea921e9d9c0408ff85756f0ca"
     else
-      url "https://github.com/danielbrodie/osc-record/releases/download/v1.4.3/osc-record_darwin_amd64.tar.gz"
-      sha256 "0466585828dc276df42c365a2dcdc68ac364f51753211c54b4e6a71dd512d058"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v1.4.4/osc-record_darwin_amd64.tar.gz"
+      sha256 "515db646830698f366f3dbf4b6eb3eaf96d32139c09b6856a292b494cf7bf7dc
+ab57a5111196a10402a33f96eedbf98d087a4dbb137341be54bf6d68b9a61cb7"
     end
   end
 
@@ -22,7 +23,7 @@ class OscRecord < Formula
 
   def caveats
     <<~EOS
-      Run `osc-record setup` to configure, then `osc-record run` to start.
+      Run \`osc-record setup\` to configure, then \`osc-record run\` to start.
 
       Default OSC addresses:
         Record: /start/record/
@@ -31,16 +32,6 @@ class OscRecord < Formula
 
       For Blackmagic DeckLink capture, Desktop Video drivers are required:
         https://www.blackmagicdesign.com/support
-
-      To use an external audio source (Dante, line-in) with a DeckLink device,
-      set `audio` in your device config, or select it during `osc-record setup`.
-      Leave blank to use DeckLink embedded audio (default).
-
-      To reinstall or upgrade:
-        brew uninstall osc-record ffmpeg-decklink
-        brew untap danielbrodie/tap
-        brew tap danielbrodie/tap
-        brew install osc-record
     EOS
   end
 
