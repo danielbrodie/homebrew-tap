@@ -1,25 +1,12 @@
 {
-    "version": "1.4.3",
+    "version": "1.4.4",
     "description": "OSC-triggered video capture for live production",
     "homepage": "https://github.com/danielbrodie/osc-record",
     "license": "MIT",
     "depends": "ffmpeg-decklink",
-    "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.4.3/osc-record_windows_amd64.zip",
-    "hash": "sha256:7e590d6ff95b239a5b75722efd43b88c00c597eaac19b20b456afb5a8b0d4185",
+    "url": "https://github.com/danielbrodie/osc-record/releases/download/v1.4.4/osc-record_windows_amd64.zip",
+    "hash": "sha256:ac016f72ab00ff6403cdc122bf979321225b1d0306cfe044b27884fee93906a2",
     "bin": "osc-record.exe",
-    "post_install": [
-        "Write-Host ''",
-        "Write-Host '  osc-record installed.' -ForegroundColor Green",
-        "Write-Host '  Run: osc-record setup' -ForegroundColor Cyan",
-        "Write-Host ''",
-        "Write-Host '  Install Blackmagic Desktop Video drivers for DeckLink capture:' -ForegroundColor Yellow",
-        "Write-Host '  https://www.blackmagicdesign.com/support' -ForegroundColor Yellow",
-        "Write-Host ''"
-    ],
-    "checkver": {
-        "github": "https://github.com/danielbrodie/osc-record"
-    },
-    "autoupdate": {
-        "url": "https://github.com/danielbrodie/osc-record/releases/download/v$version/osc-record_windows_amd64.zip"
-    }
+    "checkver": {"github": "https://github.com/danielbrodie/osc-record"},
+    "autoupdate": {"url": "https://github.com/danielbrodie/osc-record/releases/download/v$version/osc-record_windows_amd64.zip"}
 }
