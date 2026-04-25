@@ -12,16 +12,17 @@ class DecklinkTools < Formula
   end
 
   def install
-    Dir.glob("bin/*").each { |f| bin.install f }
+    # Tarball contains bin/decklink-probe and bin/decklink-monitor at root.
+    # Install both into the formula prefix bin dir.
+    bin.mkpath
+    cp_r Dir["bin/*"], bin
+    chmod 0755, Dir["#{bin}/*"]
   end
 
   def caveats
     <<~EOS
       decklink-probe — one-shot SDK status snapshot (used by osc-record)
       decklink-monitor — long-running event-driven status logger
-
-      Both require Blackmagic Desktop Video drivers:
-        https://www.blackmagicdesign.com/support
     EOS
   end
 
