@@ -1,0 +1,21 @@
+class OscRecord < Formula
+  desc "OSC-triggered video capture for live production"
+  homepage "https://github.com/danielbrodie/osc-record"
+  version "1.6.0"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/danielbrodie/osc-record/releases/download/v1.6.0/osc-record_darwin_arm64.tar.gz"
+      sha256 "5063fe591b10487484b83ad32575313702fc532a110b89be211d327266331876"
+    end
+  end
+  depends_on "ffmpeg"
+  depends_on "jq"
+  depends_on "danielbrodie/tap/ffmpeg-decklink"
+  depends_on "danielbrodie/tap/decklink-tools"
+  def install
+    bin.install "osc-record"
+  end
+  test do
+    assert_match "osc-record v", shell_output("#{bin}/osc-record version")
+  end
+end
