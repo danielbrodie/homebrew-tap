@@ -12,9 +12,20 @@ class DecklinkTools < Formula
   end
 
   def install
-    odebug "PWD: #{Dir.pwd}"
-    odebug "ENTRIES: #{Dir.entries(".").inspect}"
-    Dir.glob("**/*").each { |f| odebug "FILE: #{f}" }
-    bin.install Dir["**/decklink-*"]
+    # The tarball is created via "tar czf -C OUTDIR bin", so brew strip-prefix
+    # lands us inside the bin/ directory itself.
+    bin.install "decklink-probe", "decklink-monitor"
+  end
+
+  def caveats
+    <<~EOS
+      decklink-probe — one-shot SDK status snapshot (used by osc-record)
+      decklink-monitor — long-running event-driven status logger
+      Both require Blackmagic Desktop Video drivers.
+    EOS
+  end
+
+  test do
+    assert_match "usage:", shell_output("#{bin}/decklink-probe --bogus 2>&1", 1)
   end
 end
