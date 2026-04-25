@@ -12,8 +12,7 @@ class DecklinkTools < Formula
   end
 
   def install
-    bin.install "bin/decklink-probe"
-    bin.install "bin/decklink-monitor"
+    Dir.glob("bin/*").each { |f| bin.install f }
   end
 
   def caveats
