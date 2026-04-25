@@ -12,7 +12,10 @@ class DecklinkTools < Formula
   end
 
   def install
-    bin.install Dir["bin/*"]
+    cd "bin" do
+      bin.install "decklink-probe"
+      bin.install "decklink-monitor"
+    end
   end
 
   test do
