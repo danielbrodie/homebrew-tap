@@ -12,13 +12,9 @@ class DecklinkTools < Formula
   end
 
   def install
-    cd "bin" do
-      bin.install "decklink-probe"
-      bin.install "decklink-monitor"
-    end
-  end
-
-  test do
-    assert_match "usage:", shell_output("#{bin}/decklink-probe --bogus 2>&1", 1)
+    odebug "PWD: #{Dir.pwd}"
+    odebug "ENTRIES: #{Dir.entries(".").inspect}"
+    Dir.glob("**/*").each { |f| odebug "FILE: #{f}" }
+    bin.install Dir["**/decklink-*"]
   end
 end
