@@ -54,6 +54,10 @@ class OscRecord < Formula
 
   test do
     assert_match "osc-record #{version}", shell_output("#{bin}/osc-record version")
-    assert_match "usage:", shell_output("#{bin}/osc-recorder --help")
+    # osc-recorder's argument parser exits 1 on any flag it doesn't
+    # recognize (including --help), but prints the usage banner first.
+    # Pass the expected exit code so the assertion matches the binary's
+    # actual contract instead of a generic "must exit 0".
+    assert_match "usage:", shell_output("#{bin}/osc-recorder --help 2>&1", 1)
   end
 end
