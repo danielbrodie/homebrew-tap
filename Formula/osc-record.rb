@@ -1,7 +1,7 @@
 class OscRecord < Formula
   desc "OSC-triggered video capture for live production"
   homepage "https://github.com/danielbrodie/osc-record"
-  version "2.3.4"
+  version "2.4.0"
 
   on_macos do
     if Hardware::CPU.arm?
@@ -9,12 +9,12 @@ class OscRecord < Formula
       # as two tarballs from the same GitHub release. The controller
       # binary keeps the same name as the Go v1.x binary so existing
       # LaunchAgents and shell aliases keep working across the upgrade.
-      url "https://github.com/danielbrodie/osc-record/releases/download/v2.3.4/osc-record_darwin_arm64.tar.gz"
-      sha256 "a367edfb93b39b53916e23656c8f8d3c4e3b40fb35ac20ec2a181a8fdccf2cee"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.0/osc-record_darwin_arm64.tar.gz"
+      sha256 "728ce022ce881bcb56308ce86dae5fd20f43555f4326daa1cc55682579e75263"
 
       resource "osc-recorder" do
-        url "https://github.com/danielbrodie/osc-record/releases/download/v2.3.4/osc-recorder_darwin_arm64.tar.gz"
-        sha256 "d7a480508764b10e0272c28cffef553da0c01de25a14c1890d0a7697f4e121b8"
+        url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.0/osc-recorder_darwin_arm64.tar.gz"
+        sha256 "243e1e21982c57bbe38229e99b6734e0c54a97c03a5b9aa3df19a7ddef8b1407"
       end
     end
   end
@@ -43,7 +43,7 @@ class OscRecord < Formula
       --non-interactive` succeeds with zero flags on a brew install.
 
       Quick check after install:
-        osc-record version       # osc-record 2.3.4
+        osc-record version       # osc-record 2.4.0
         osc-record setup         # one-time on a fresh install / v1 → v2 upgrade
         osc-record slate get
         osc-record audio-devices
