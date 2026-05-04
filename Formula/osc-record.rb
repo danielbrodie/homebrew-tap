@@ -1,7 +1,7 @@
 class OscRecord < Formula
   desc "OSC-triggered video capture for live production"
   homepage "https://github.com/danielbrodie/osc-record"
-  version "2.4.2"
+  version "2.4.3"
 
   on_macos do
     if Hardware::CPU.arm?
@@ -9,17 +9,25 @@ class OscRecord < Formula
       # as two tarballs from the same GitHub release. The controller
       # binary keeps the same name as the Go v1.x binary so existing
       # LaunchAgents and shell aliases keep working across the upgrade.
-      url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.2/osc-record_darwin_arm64.tar.gz"
-      sha256 "500258fc322631cf59f2fc2cc0cd285ab4245d240209fb66ae5ed77849ba17d7"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.3/osc-record_darwin_arm64.tar.gz"
+      sha256 "1290e5cd4d60c099c7b152e1b585177bd38af66baec3e2bf7a4339b40dd2e769"
 
       resource "osc-recorder" do
-        url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.2/osc-recorder_darwin_arm64.tar.gz"
-        sha256 "23bca0c272ce4842306d9636d4fae1eca70218c8b786e0cf97a3acaf103d8d9b"
+        url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.3/osc-recorder_darwin_arm64.tar.gz"
+        sha256 "9809c13ccb801d6e734f51b9d549b536ac036c977bbc787c637f84da7553dd0a"
       end
     end
   end
 
-  depends_on "ffmpeg"
+  # ffmpeg-decklink ships a self-contained ffmpeg binary with DeckLink
+  # capture support — that's the one osc-record's daemon shells out to
+  # for device probing. We don't depend on the standalone `ffmpeg`
+  # formula because operators frequently have it installed from a
+  # third-party tap (e.g. homebrew-ffmpeg/ffmpeg) which conflicts
+  # with brew-core's `ffmpeg` formula and breaks `brew upgrade
+  # osc-record`. The Rust controller's default_ffmpeg_path autodetects
+  # whichever ffmpeg flavor is installed at /opt/homebrew/bin/ffmpeg,
+  # /opt/homebrew/bin/ffmpeg-decklink, or /usr/local/bin/ffmpeg.
   depends_on "danielbrodie/tap/ffmpeg-decklink"
   depends_on "danielbrodie/tap/decklink-tools"
 
@@ -43,7 +51,7 @@ class OscRecord < Formula
       --non-interactive` succeeds with zero flags on a brew install.
 
       Quick check after install:
-        osc-record version       # osc-record 2.4.2
+        osc-record version       # osc-record 2.4.3
         osc-record setup         # one-time on a fresh install / v1 → v2 upgrade
         osc-record slate get
         osc-record audio-devices
