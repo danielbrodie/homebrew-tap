@@ -6,7 +6,7 @@ class DecklinkTools < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.9/decklink-tools-darwin-arm64.tar.gz"
+      url "https://github.com/danielbrodie/osc-record-bin/releases/download/decklink-tools-v1.7.0/decklink-tools-darwin-arm64.tar.gz"
       sha256 "5aa63f82dd494f1ad324ce62110554dcd315137bc100150124e77860c41101d1"
     end
   end

@@ -9,11 +9,11 @@ class OscRecord < Formula
       # as two tarballs from the same GitHub release. The controller
       # binary keeps the same name as the Go v1.x binary so existing
       # LaunchAgents and shell aliases keep working across the upgrade.
-      url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.12/osc-record_darwin_arm64.tar.gz"
+      url "https://github.com/danielbrodie/osc-record-bin/releases/download/v2.4.12/osc-record_darwin_arm64.tar.gz"
       sha256 "aa696e0039f385327d8e145ab2005e7cd528e8db57ec10b5322ee9406a2d8790"
 
       resource "osc-recorder" do
-        url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.12/osc-recorder_darwin_arm64.tar.gz"
+        url "https://github.com/danielbrodie/osc-record-bin/releases/download/v2.4.12/osc-recorder_darwin_arm64.tar.gz"
         sha256 "352194f8f6f3fed73c01c7856637a096e97d6233a656a7b3d81374b0432ab5f7"
       end
     end
