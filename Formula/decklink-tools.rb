@@ -1,13 +1,13 @@
 class DecklinkTools < Formula
   desc "Native Blackmagic SDK utilities for osc-record (probe + monitor)"
   homepage "https://github.com/danielbrodie/osc-record"
-  version "1.6.0"
+  version "1.7.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/danielbrodie/osc-record/releases/download/v1.6.0/decklink-tools-darwin-arm64.tar.gz"
-      sha256 "623fe14d405995f4687dad42e306c0972c60124802d54a2aa0c32111aed52e36"
+      url "https://github.com/danielbrodie/osc-record/releases/download/v2.4.9/decklink-tools-darwin-arm64.tar.gz"
+      sha256 "5aa63f82dd494f1ad324ce62110554dcd315137bc100150124e77860c41101d1"
     end
   end
 
