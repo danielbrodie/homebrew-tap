@@ -1,7 +1,7 @@
 class OscRecord < Formula
   desc "OSC-triggered video capture for live production"
   homepage "https://github.com/danielbrodie/osc-record"
-  version "2.4.45"
+  version "2.4.46"
 
   on_macos do
     if Hardware::CPU.arm?
@@ -9,12 +9,12 @@ class OscRecord < Formula
       # as two tarballs from the same GitHub release. The controller
       # binary keeps the same name as the Go v1.x binary so existing
       # LaunchAgents and shell aliases keep working across the upgrade.
-      url "https://github.com/danielbrodie/osc-record-bin/releases/download/v2.4.45/osc-record_darwin_arm64.tar.gz"
-      sha256 "a84c5f18577d7785e2545af4582317a0f4df75dc0be2d5fa2d8d1a34a480e567"
+      url "https://github.com/danielbrodie/osc-record-bin/releases/download/v2.4.46/osc-record_darwin_arm64.tar.gz"
+      sha256 "f77435d78483450807856c3b520acd44aae8d1390af18133817b5f7da1e5520b"
 
       resource "osc-recorder" do
-        url "https://github.com/danielbrodie/osc-record-bin/releases/download/v2.4.45/osc-recorder_darwin_arm64.tar.gz"
-        sha256 "ab0cbaebc5f33dbf36a921255d6fdfeee49e50903adb212f8b83ae01daff9022"
+        url "https://github.com/danielbrodie/osc-record-bin/releases/download/v2.4.46/osc-recorder_darwin_arm64.tar.gz"
+        sha256 "956043c3f19d5fbfde4de41bfdb4c9c7f501ff2267e9f8bf4fd5310fc31a61e6"
       end
     end
   end
